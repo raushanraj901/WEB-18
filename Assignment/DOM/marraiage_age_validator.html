@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <input type="number" id="yob">
+    <button onclick="result()">Click Here</button>
+</body>
+</html>
+
+<script>
+    function result(){
+        var gender = document.getElementById("gender").value
+        var yob = document.getElementById("yob").value
+        var age = 2022 - yob
+        if( age >= 21 && gender == "Male")
+        {
+            alert(gender+" "+ age+ ": You can married!")
+        }
+        else if(gender=="Female" && age >=18)
+        {
+            alert(gender+" "+ age+ ": You can Marrried")
+        }
+        else
+        alert(gender+" "+ age+ ": You can't married ")
+    }
+</script>

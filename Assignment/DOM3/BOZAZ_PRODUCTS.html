@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz Products</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: teal;
+        }
+        .container{
+            padding: 10px;
+            width: 70%;
+            margin: auto;
+            background-color: white;
+        }
+        h1{
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .container>div :nth-child(1){
+            width: 78%;
+            margin: auto;
+        }
+        .container>div :nth-child(2){
+            /* width: 100%; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #products > div {
+            width: 23%;
+            background-color: white;
+
+        }
+        input,select{
+            display: block;
+            width: 76%;
+            margin: 10px auto;
+            padding: 5px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Add Some Products</h1>
+           <form id="form">
+               <select name="" id="catagory">
+                   <option value="">Select Catagory</option>
+                   <option value="electronics">Electronics</option>
+                   <option value="furniture">Furniture</option>
+                   <option value="home">Home Appliances</option>
+                   <option value="books">Books</option>
+               </select>
+               <input id="title" placeholder="Product title" type="text">
+               <input id="desc" placeholder="Product description" type="text">
+               <input id="price" placeholder="Product price" type="number">
+               <input type="submit">
+            </form> 
+        </div>
+        <div id="products">
+
+        </div>
+    </div>
+</body>
+<script>
+    var form = document.getElementById("form")
+    var products = document.querySelector("#products")
+    
+    function display(data){
+        var parent = document.createElement("div")
+        var heading  = document.createElement("h2")
+        heading.textContent = data.catagory
+        var title = document.createElement("p")
+        title.innerText = data.title
+        var desc = document.createElement("p")
+        title.innerText = data.desc
+        var price = document.createElement("p")
+        title.innerText = data.price
+
+        parent.append(heading,title,desc,price)
+
+        products.append(parent)
+    }
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault()
+        var data = {
+            title: form.title.value,
+            desc: form.desc.value,
+            price: form.price.value,
+            catagory: form.catagory.value
+        }
+        display(data)
+    })
+</script>
+</html>

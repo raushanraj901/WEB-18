@@ -1,0 +1,21 @@
+body{
+    margin: auto;
+}
+#navbar{
+    display: flex;
+    background-color: rgb(38, 38, 102);
+    justify-content: space-around;
+    padding: 10px;
+}
+a{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+#button{
+    background-color: green;
+    border-radius: 5px;
+    border: 1px solid green;
+    color: white;
+}

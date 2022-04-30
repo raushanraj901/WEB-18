@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout3</title>
+        <style>
+            #container{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: auto 400px;
+                gap: 20px;
+                grid-template-areas: 
+                "nav nav nav nav"
+                "b1 b2 b3 b4"
+                ;
+            }
+            #container > div {
+                display: flex;
+
+            }
+            #container>div:nth-child(1)
+            {
+                font-size: 20px;
+                grid-area: nav;
+                background-color: yellow;
+            }
+            #container>div >div 
+            /* :nth-child(2) */
+            {
+                width: 70%;
+                grid-area: b1;
+                background-color: red;
+            }
+            #container>div > div :nth-child(1)
+            {
+               
+                grid-area: b2;
+                background-color: green;
+            }
+            #container>div:nth-child(4)
+            {
+                grid-area: b3;
+                background-color: blue;
+            }
+            #container>div:nth-child(5)
+            {
+                grid-area: b4;
+                background-color: gray;
+            }
+    
+            @media all and (min-width: 451px) and (max-width: 750px)
+            {
+                #container{
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: 90px 200px 200px;
+                    grid-template-areas: 
+                    "nav nav"
+                    "b1 b3"
+                    "b2 b4";
+                }
+            }
+    
+            @media all and (min-width: 100px) and (max-width: 450px)
+            {
+                #container{
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: 50px 100px 100px 100px 100px;
+                    gap: 10px;
+                    grid-template-areas: 
+                    "nav"
+                    "b1"
+                    "b4"
+                    "b2"
+                    "b3";
+                }
+            }
+        </style>
+    </head>
+<bod<body>
+    <div id="container">
+        <div><h1>Navigation</h1></div>
+        <div>
+            <div>Box 1</div>   
+            <div>
+                <div>Box 2</div>
+                <div>Box 3</div>
+                <div>Box 4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

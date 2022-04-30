@@ -1,0 +1,23 @@
+body{
+    background-color: teal;
+}
+#container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+h1{
+    font-size: 40px;
+    color: white;
+}
+button{
+    background-color: rgb(250, 226, 226);
+    color: blue;
+    border: 1px solid green;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}

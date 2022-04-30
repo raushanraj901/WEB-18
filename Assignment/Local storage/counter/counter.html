@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="counter.css">
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    
+    var div = document.createElement("div")
+    div.setAttribute("id","container")
+    var tag = document.createElement("h1")
+    tag.innerText = count
+
+    var incr = document.createElement("button")
+    incr.setAttribute("id","incr")
+    incr.innerText = "Increase"
+    var decr = document.createElement("button")
+    decr.setAttribute("id","decr")
+    decr.innerText = "Decrease"
+    div.append(tag,incr,decr)
+    document.querySelector("body").append(div)
+
+
+    var count = localStorage.getItem("value") || 0
+    document.querySelector("h1").innerText = count
+    document.querySelector("#incr").addEventListener("click",increment)
+
+    function increment(){
+        count++
+        document.querySelector("h1").innerText = count
+        localStorage.setItem("value",count)
+    }
+
+    document.querySelector("#decr").addEventListener("click",decrement)
+
+    function decrement(){
+        count--
+        document.querySelector("h1").innerText = count
+        localStorage.setItem("value",count)
+    }
+
+</script>

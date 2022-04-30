@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 1 auto;
+            margin-top: 30px;
+        }
+        #container > div {
+            margin: auto;
+        }
+        h2+div{
+            width: 85%;
+            display: flex;
+            margin: auto;
+        }
+        h2,s{
+            text-align: center;
+            margin: auto;
+            font-size: 18px;
+            color: rgb(94, 93, 93);
+        }
+
+        s,p{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script> 
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00",
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00",
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00",
+    },
+]
+
+    var div = document.createElement("div")
+    div.setAttribute("id","container")
+    document.querySelector("body").append(div)
+
+
+    data.forEach(function(item){
+       var box = document.createElement("div")
+       var i_image = document.createElement("img")
+       i_image.setAttribute("src",item.imgUrl)
+       var i_name = document.createElement("h2")
+       i_name.innerText = item.name
+       var price = document.createElement("div")
+       var i_price  = document.createElement("p")
+       i_price.innerText = item.price
+       var i_strickedOffprice = document.createElement("s")
+       i_strickedOffprice.innerText = item.strikedOffPrice
+       price.append(i_price,i_strickedOffprice)
+
+       box.append(i_image,i_name,price)
+       document.querySelector("#container").append(box)
+    })
+</script>

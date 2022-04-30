@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            background-color: rgb(12, 1, 1);
+            display: flex;
+        }
+        #box1 >div{
+            display: flex;
+            margin: auto;
+        }
+        P{
+            color: white;
+            font-size: 20px;
+        }
+        p+button {
+            margin-left: 10px;
+            color: red;
+            background-color: rgb(12, 1, 1);
+            border: 1px solid rgb(12, 1, 1);
+            font-size: 12px;  
+        }
+        #box2{
+            margin: auto;
+            width: 80%;
+            display: flex;
+        }
+        h1{
+            width: 40%;
+        }
+        #box2 > div{
+            display: flex;
+            width: 60%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(7,auto);
+            font-size: 14px;
+            height: 30px;
+            padding-top: 30px;
+            font-weight: bold;
+        }
+        #box2>div>button{
+            background-color: white;
+            border: 1px solid red;
+           margin: auto;
+           font-weight: bold;
+           height: 35px;
+           width: 70px;
+           margin-top: -12px;
+           border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div>
+            <p>Register for The 
+                Coding Classroom and 
+                learn the basics of web 
+                development for tree.
+            </p>
+            <button>REGISTER ></button>
+        </div>
+    </div>
+    <div id="box2">
+        <h1>masai</h1>
+        <div>
+            <div>COURSES ^</div>
+            <div>FEES & ISA</div>
+            <div>ABOUT US</div>
+            <div>HIRE FROM US</div>
+            <div>FAQ</div>
+            <div>EVENTS</div>
+            <button>Login</button>
+        </div>
+        
+    </div>
+</body>
+</html>

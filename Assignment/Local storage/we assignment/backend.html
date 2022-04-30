@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        #invForm{
+            margin-top: 20px;
+        }
+        #button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="backend.html">Backend</a></div>
+        <div><a href="frontend.html">Frontend</a></div>
+    </div>
+    <form id="invForm">
+        <input id="invName" type="text" placeholder="Enter Name">
+        <input id="invImg" type="text" placeholder="Enter Image URL">
+        <input id="logo" type="text" placeholder="Enter Company Logo URL">
+        <input id="role" type="text" placeholder="Enter Role">
+        <input id="button" type="submit">
+    </form>
+</body>
+</html>
+<script>
+
+    document.querySelector("#invForm").addEventListener("submit",invDetails)
+    
+    var invArr = JSON.parse(localStorage.getItem("invData"))||[]
+    function invDetails(){
+        event.preventDefault()
+        
+        var invObj = {
+            invImg: invForm.invImg.value,
+            invName: invForm.invName.value,
+            invRole: invForm.role.value,
+            invLogo: invForm.logo.value,
+        }
+        invArr.push(invObj)
+        localStorage.setItem("invData",JSON.stringify(invArr))
+    }
+</script>

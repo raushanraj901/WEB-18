@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,auto);
+            gap: 20px;
+        }
+        h1,h3,p{
+            margin-top: 0px;
+            text-align: center;
+        }
+        p{
+            margin-top: -10px;
+            color: gray;
+        }
+        p+img{
+            margin-top: -10px;
+            height: 40px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    var invArr = JSON.parse(localStorage.getItem("invData"))
+
+    invArr.forEach(function(item){
+        var box = document.createElement("div")
+        var invimg = document.createElement("img")
+        invimg.setAttribute("src",item.invImg)
+        var invname= document.createElement("h3")
+        invname.innerText=item.invName
+        var invrole= document.createElement("p")
+        invrole.innerText=item.invRole
+        var invlogo = document.createElement("img")
+        invlogo.setAttribute("src",item.invLogo)
+        box.append(invimg,invname,invrole,invlogo)
+        document.querySelector("div").append(box)
+    })
+</script>

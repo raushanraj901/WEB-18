@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="Male">M</option>
+		<option value="Female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+		function showName() {
+			// Show filled name inside h1
+			var get = document.getElementById("name").value
+			document.getElementById("dName").innerText=get
+		}
+
+		function showGender() {
+			// Show the selected gender inside h2
+			var get = document.getElementById("gender").value
+			document.getElementById("dGender").innerText=get
+		}
+
+		function showEmail() {
+			// Show the filled email inside h3
+			var get = document.getElementById("email").value
+			document.getElementById("dEmail").innerText=get
+		}
+
+		function showMobile() {
+			// Show the filled mobile inside h4
+			var get = document.getElementById("mobile").value
+			document.getElementById("dMobile").innerText=get
+		}
+
+		function resetForm() {
+			// Reset all the form elements to default values (blank "")
+			document.getElementById("dName").innerText="NAME"
+			document.getElementById("dGender").innerText="GENDER"
+			document.getElementById("dEmail").innerText="EMAIL"
+			document.getElementById("dMobile").innerText="MOBILE"
+		}
+
+		function resetDisplay() {
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+			document.getElementById("dName").innerText="\n"
+			document.getElementById("dGender").innerText="\n"
+			document.getElementById("dEmail").innerText="\n"
+			document.getElementById("dMobile").innerText="\n"
+		}
+	</script>
+</body>
+</html>

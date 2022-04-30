@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="Enter name" id="name">
+        <input type="number" placeholder="Enter enter your age" id="age">
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <input type="text" placeholder="Enter your mail" id="email">
+        <input type="number" placeholder="Enter your number" id="number">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit",myfunction)
+    
+    var dataArr = []
+
+    function myfunction(){
+        event.preventDefault()
+        var dataObj = {
+            name: form.name.value,
+            age: form.age.value,
+            gender: form.gender.value,
+            email: form.email.value,
+            numbar : form.number.value,
+        }
+        dataArr.push(dataObj)
+        localStorage.setItem("details",JSON.stringify)
+    }   
+   
+</script>

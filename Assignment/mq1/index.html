@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows:50px 200px;
+            gap: 20px;
+            grid-template-areas: 
+            'nav nav nav nav'
+            'b1 b2 b3 b4';
+        }
+        #container > div{
+            border: 1px solid red;
+            
+        }
+        #container > :nth-child(1){
+            background-color: blue;
+            grid-area: nav;
+        }
+        #container > :nth-child(2){
+            background-color: rgb(185, 18, 74);
+            grid-area: b1;
+        }
+        #container > :nth-child(3){
+            background-color: rgb(14, 190, 132);
+            grid-area: b2;
+        }
+        #container > :nth-child(4){
+            background-color: rgb(187, 96, 10);
+            grid-area: b3;
+        }
+        #container > :nth-child(5){
+            background-color: rgb(80, 128, 3);
+            grid-area: b4;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>div</div>
+        <div>box1</div>
+        <div>box3</div>
+        <div>box 4</div>
+        <div>box 5</div>
+    </div>
+</body>
+</html>
